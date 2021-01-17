@@ -14,7 +14,7 @@ const Login = () => {
                     src="https://upload.wikimedia.org/wikipedia/commons/5/51/IMessage_logo.svg"
                     alt="logo"
                 />
-                <h1>iMassage</h1>
+                <h1><span>i</span> Massage</h1>
             </div>
             <Button onClick={signIn}>Sign In</Button>
         </div>

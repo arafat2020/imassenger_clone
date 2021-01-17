@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Dancing+Script:wght@700&display=swap');
 .sidebarchat{
     display: flex;
     align-items: center;
@@ -15,8 +17,25 @@
     width: 100%;
     position: relative;
 }
+.sisdebarchat_info h3{
+    font-family: 'Dancing Script', cursive;
+}
+.sisdebarchat_info p{
+    font-family: 'Cinzel', serif;
+}
 .sisdebarchat_info small{
     position: absolute;
     top: 5px;
     right: 0;
+}
+@media (min-width:320px) and (max-width:575px){
+    .sidebarchat{
+        padding: 10px;
+    }
+    .sisdebarchat_info{
+        width: 60%;
+    }
+    .sisdebarchat_info h3{
+        font-size: 17px;
+    }
 }

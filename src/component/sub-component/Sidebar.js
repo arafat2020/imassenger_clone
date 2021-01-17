@@ -6,13 +6,14 @@ import { Avatar,IconButton } from '@material-ui/core';
 import SidebarChat from './SidebarChat';
 import { useSelector } from 'react-redux';
 import { selectUSer } from '../../features/userSlice';
-import db,{ auth } from '../../firebase';
-
+import db, { auth } from '../../firebase';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 
 const Sidebar = () => {
     const user = useSelector(selectUSer);
     const [chat, setChat] = useState([]);
+    const [togler, settogler] = useState(null);
     useEffect(() => {
         db.collection("chats").onSnapshot((snapshot) => {
             setChat(
@@ -33,8 +34,16 @@ const Sidebar = () => {
         }
     }
     
+    const togohandeler = () => {
+        if (togler) {
+            settogler(null)
+        } else {
+            settogler(true)
+        }
+    };
+    
     return (
-        <div className="sidebar">
+        <div className={`sidebar ${togler && 'no_margin'}`}>
             <div className="sidebar_header">
                 <Avatar onClick={()=>auth.signOut()} src={user.photo} className="sidebar_avater"/>
                 <div className="sidebar_input">
@@ -44,8 +53,11 @@ const Sidebar = () => {
                 <IconButton onClick={addChat} className="sidebar_rate">
                     <RateReviewIcon/>
                 </IconButton>
+                <IconButton onClick={togohandeler}  className="togler">
+                    <ArrowForwardIosIcon/>
+                </IconButton>
             </div>
-            <div className="sidebarchats">
+            <div onClick={togohandeler} className="sidebarchats">
                 {chat.map(({ id, data: { chatName } }) => (
                     <SidebarChat key={id} id={id} chatName={chatName} />
                 ))}
