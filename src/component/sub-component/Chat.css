@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
 .chat{
     flex: .65;
     display: flex;
@@ -15,10 +17,15 @@
 .chat_header h4{
     font-weight: 500;
     color: gray;
+    font-family: 'Courgette', cursive;
 }
 .chat_name{
-    color: black;
+    color: #22272e;
     font-weight: bold;
+}
+.chat_header strong{
+    font-family: 'Courgette', cursive;
+    color: #22272e;
 }
 .chat_input{
     display: flex;

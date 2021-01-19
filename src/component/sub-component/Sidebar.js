@@ -57,6 +57,7 @@ const Sidebar = () => {
                     <ArrowForwardIosIcon/>
                 </IconButton>
             </div>
+            <h3 className ="room">Chat Room</h3>
             <div onClick={togohandeler} className="sidebarchats">
                 {chat.map(({ id, data: { chatName } }) => (
                     <SidebarChat key={id} id={id} chatName={chatName} />

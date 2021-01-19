@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
 .sidebar{
     flex: 0.35;
     height: 100vh;
@@ -41,17 +43,26 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+.room{
+    font-family: 'Courgette', cursive;
+    color: #22272e;
+    padding-left: 20px;
+}
 .togler{
     display: none !important;
 }
 @media (min-width:320px) and (max-width:575px){
     .sidebar{
-        margin-left: -290px;
+        margin-left: -316px;
     }
     .togler{
         display: initial !important;
-        transition: .4s !important;
+        padding-left: 20px !important;
        
+    }
+    
+    .sidebarchats{
+        width: 0;
     }
     .no_margin{
         margin-left: 0;
@@ -59,4 +70,8 @@
     .no_margin .togler{
         transform: rotate(180deg);
     }
+    .no_margin .sidebarchats{
+        width: 100%;
+    }
+    
 }
